@@ -13,7 +13,7 @@
 // //----------------------------------------------------------------------------------------------------------------------
 
 using System;
-using System.IO;
+using System.IO; //used for TextWriter
 using System.Linq;
 
 namespace PowerSumProblem
@@ -29,7 +29,7 @@ namespace PowerSumProblem
     /// <remarks>
     ///     Date Created: 10/19/2020
     /// </remarks>
-    internal static class PowerSumProblem
+    public static class PowerSumProblem
     {
         /// <summary>
         ///     Calculates the number of possible combinations unique nth power values
@@ -49,13 +49,13 @@ namespace PowerSumProblem
             for (var i = 0; i < nthPowers.Length; i++)
             {
                 nthPowers[i] = (int) Math.Pow(i + 1, n);
-            }
+            } //end for(var i = 0; i < nthPowers.Length; i++)
 
             //find all possible combinations of unique 'n' th power sums that equal 'x'
             numCombinations = findCombinations(nthPowers, x, ref numCombinations);
 
             return numCombinations; //return the number of combinations possible
-        }
+        } //end powerSum(int, int)
 
         /// <summary>
         ///     Finds how many ways nth power values can sum to equal 'x'.
@@ -69,7 +69,7 @@ namespace PowerSumProblem
             if (x == 0) //if the difference between the target value and running sum equals zero...
             {
                 numCombinations++; //increment the combinations counter
-            }
+            } //end if (x == 0)
             else if (x > 0) //if there running sum doesn't yet equal the target 'x' value...
             {
                 /*
@@ -80,11 +80,11 @@ namespace PowerSumProblem
                 for (int i = nthPowers.Length - 1; i >= 0; i--)
                 {
                     findCombinations(nthPowers.Take(i).ToArray(), x - nthPowers[i], ref numCombinations);
-                }
-            }
+                } //end for(int i = nthPowers.Length - 1; i >= 0; i--)
+            } //end else-if
 
             return numCombinations; //return the number of combinations found
-        }
+        } //end findCombinations(int[], int, ref int)
 
         /// <summary>
         ///     Defines the entry point of the application.
@@ -103,6 +103,6 @@ namespace PowerSumProblem
 
             textWriter.Flush(); //clear the writer buffer
             textWriter.Close(); //release any allocated memory for the writer
-        }
-    }
-}
+        } //end Main()
+    } //end class PowerSumProblem
+} //end namespace
