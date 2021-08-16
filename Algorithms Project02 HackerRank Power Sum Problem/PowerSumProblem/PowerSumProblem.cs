@@ -6,9 +6,6 @@
 // //          of unique squares adding up to '13'. The only solution is 2^2 + 3^2. 'X' is the number to sum to. 'N' is
 // //          the integer power to raise numbers to.
 // //----------------------------------------------------------------------------------------------------------------------
-// // Programmer name: David Nelson (nelsondk@etsu.edu)
-// // Course Name: CSCI 3230 Algorithms
-// // Course Section: 901
 // // Creation Date: 10/19/2020
 // //----------------------------------------------------------------------------------------------------------------------
 
@@ -23,9 +20,6 @@ namespace PowerSumProblem
     ///     integer X can be expressed as the sum of the Nth powers of unique,
     ///     natural numbers.
     /// </summary>
-    /// <author>
-    ///     David Nelson
-    /// </author>
     /// <remarks>
     ///     Date Created: 10/19/2020
     /// </remarks>
